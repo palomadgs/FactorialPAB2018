@@ -6,15 +6,15 @@ public class Factorial {
 		int result = 0;
 		
 		//RECOMENDABLE PONER SIEMPRE PARENTESIS AUNQUE NO SEAN NECESARIOS --> LIBRO MARTIN
-		
-		if((number == 0)|| (number == 1)) {
+		if (number < 0) {
+			throw new RuntimeException();
+		} else if((number == 0)|| (number == 1)) {
 			result = 1;
-		}else if (number == 2){
-			result = 2;
-		}else if(number == 3){
-			result = 6;
+		}else {
+			result = number * compute(number-1);
 		}
 		return result; //La variable sale en roja porque no estaba inicializada
 	}
 	
+	//Mi programa no compruaba si el numero es muy grande o negativo
 }
